@@ -1,0 +1,31 @@
+body {
+    /*margin: 0;*/
+    /*padding: 0;*/
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-bottom: 0;
+    width: 100%;
+    height: 137px;
+    background: #029491;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+
+}
+
+.info-address {
+    margin-right: 45px;
+    text-align: right;
+    color: white;
+}
+
+.footer-info {
+    font-family: sans-serif;
+}
+

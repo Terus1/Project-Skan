@@ -1,0 +1,468 @@
+body {
+    /*margin: 0;*/
+    /*padding: 0;*/
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    margin-right: 60px;
+    margin-left: 60px;
+    flex-grow: 1;
+}
+
+.upper-part-site {
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-why-are-we {
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.carousel-position {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow-nav-left {
+    /*position: absolute;*/
+    /*left: 435px;*/
+    /*top: 124px;*/
+    cursor: pointer;
+}
+
+.arrow-nav-right {
+    /*position: absolute;*/
+    /*right: 335px;*/
+    /*top: 124px;*/
+    cursor: pointer;
+    rotate: 180deg;
+}
+
+#carousel {
+    width: 2000px;
+    position: relative;
+    top: 0;
+    left: -450px;
+}
+
+.slide {
+    margin-right: 50px;
+    height: 300px;
+    width: 500px;
+
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.man-sitting {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+
+}
+
+.text-our-tariffs {
+    text-align: left;
+    font-size: 45px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.list-of-tariffs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 415px);
+    /*grid-template-rows: 540px 540px 540px;*/
+    grid-gap: 2vw;
+    /*text-align: center;*/
+    justify-content: center;
+}
+
+.beginner {
+    position: relative;
+    width: 415px;
+    height: 540px;
+    background: white;
+    margin-bottom: 118px;
+    box-shadow: inset 0 0 0 2px #FFB64F;
+    border-radius: 10px;
+
+}
+
+.head-tariff-beginner {
+    text-align: left;
+}
+
+.beginner-icon {
+    position: absolute;
+    top: 11px;
+    right: 16px;
+
+}
+
+.beginner-button {
+    position: absolute;
+    bottom: 24px;
+    left: 30px;
+    right: 30px;
+}
+
+.tariff-header-beginner {
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 132px;
+    width: 100%;
+    background: #FFB64F;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+
+}
+
+.name-of-tariff {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.shortly {
+    margin: 0;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.tariff-body-beginner {
+    padding-top: 33px;
+    padding-left: 30px;
+    border-radius: 10px;
+
+}
+
+.div-new-price {
+    width: 100px;
+    position: absolute;
+    top: 165px;
+    left: 30px;
+    right: 299px;
+}
+
+.new-price {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 500;
+    display: inline;
+}
+
+.div-old-price {
+    position: absolute;
+    top: 168px;
+    left: 135px;
+    right: 187px;
+}
+
+.old-price {
+    font-size: 25px;
+    font-family: Inter sans-serif;
+    font-weight: 500;
+    color: grey;
+    display: inline;
+
+}
+
+.current-tariff {
+    position: absolute;
+    right: 10px;
+    top: 144px;
+    width: 134px;
+    height: 24px;
+    background: #3BA5E0;
+    border-radius: 10px;
+    float: right;
+
+}
+
+.text-current-tariff {
+    margin: 0;
+    text-align: center;
+}
+
+.monthly {
+    position: absolute;
+    top: 211px;
+    left: 30px;
+    right: 15px;
+    margin: 10px 0 0;
+    width: 340px;
+    height: 22px;
+    font-size: 20px;
+    font-family: Inter sans-serif;
+    font-weight: 400;
+}
+
+.site-h1 {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 60px;
+    font-family: sans-serif
+}
+
+.div-tariff-includes {
+    /*position: absolute;*/
+    top: 292px;
+    left: 30px;
+    right: 44px;
+    bottom: 138px;
+}
+
+.text-tariff-includes {
+    margin: 0;
+    position: absolute;
+    top: 292px;
+    /*bottom: 224px;*/
+    font-size: 20px;
+    font-weight: 500;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.green-check-mark-1 {
+    position: absolute;
+    left: 30px;
+    bottom: 193px;
+    height: 20px;
+    width: 20px;
+    text-align: left;
+}
+
+.text-in-body-tariff-includes-1 {
+    margin: 0;
+    position: absolute;
+    left: 58px;
+    bottom: 192px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.green-check-mark-2 {
+    position: absolute;
+    left: 30px;
+    bottom: 166px;
+    height: 20px;
+    width: 20px;
+    text-align: left;
+}
+
+.text-in-body-tariff-includes-2 {
+    margin: 0;
+    position: absolute;
+    left: 58px;
+    bottom: 165px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.green-check-mark-3 {
+    position: absolute;
+    left: 30px;
+    bottom: 139px;
+    height: 20px;
+    width: 20px;
+    text-align: left;
+}
+
+.text-in-body-tariff-includes-3 {
+    margin: 0;
+    position: absolute;
+    left: 58px;
+    bottom: 139px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: sans-serif;
+
+}
+
+
+
+.small-text {
+    text-align: left;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.to-personal-acc {
+    background: #D2D2D2;
+    width: 355px;
+    height: 59px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.pro {
+    position: relative;
+    width: 415px;
+    height: 540px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.head-tariff-pro {
+    text-align: left;
+}
+
+.pro-button {
+    position: absolute;
+    bottom: 24px;
+    left: 30px;
+    right: 30px;
+}
+
+.tariff-header-pro {
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 132px;
+    background: #7CE3E1;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.name-of-tariff {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.pro-icon {
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    rotate: 0deg;
+    align-items: start;
+}
+
+.more-white {
+    color: white;
+    width: 355px;
+    height: 59px;
+    background: #5970FF;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.business {
+    position: relative;
+    width: 415px;
+    height: 540px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.head-tariff-business {
+    text-align: left;
+}
+
+.button-business {
+    position: absolute;
+    bottom: 24px;
+    left: 30px;
+    right: 30px;
+}
+
+.tariff-header-business {
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 132px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.name-of-tariff-business {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.shortly-business {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+/*- -           -   -   -   -       -   -   -   -   -   -   -   SLIDER------------------------------*/
+.carousel {
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8b400;
+    font-size: 24px;
+    color: white;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+

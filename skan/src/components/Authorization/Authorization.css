@@ -1,0 +1,240 @@
+body {
+    /*margin: 0;*/
+    /*padding: 0;*/
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.both-parts {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 550px 0 550px;
+}
+
+.text-authorization {
+    font-size: 48px;
+    font-weight: 900;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.div-people-carrying-key {
+    text-align: center;
+}
+
+.container-entrance {
+    position: relative;
+    width: 429px;
+    height: 523px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.div-lock {
+    position: absolute;
+    top: -60px;
+    right: 400px;
+    opacity: 100%;
+}
+
+/*.log-reg-tabs {*/
+/*    padding-top: 25px;*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*}*/
+
+/*.div-log-tab {*/
+/*    position: absolute;*/
+/*    top: 25px;*/
+/*    left: 25px;*/
+/*}*/
+
+
+.log-tab {
+    position: absolute;
+    top: 25px;
+    left: 77px;
+    color: #029491;
+    font-size: 16px;
+    font-family: sans-serif;
+    /*cursor: pointer;*/
+    text-decoration: none;
+}
+
+.hr-log-tab-enter {
+    position: absolute;
+    top: 52px;
+    left: 25px;
+    /*color: #C7C7C7;*/
+    width: 151px;
+    border-top: 2px solid #029491;
+    height: 2px;
+}
+
+/*.div-reg-tab {*/
+/*    position: absolute;*/
+/*    top: 25px;*/
+/*    right: 25px;*/
+/*}*/
+
+.hr-log-tab-registration {
+    position: absolute;
+    top: 52px;
+    right: 25px;
+    /*color: #C7C7C7;*/
+    width: 213px;
+    border-top: 2px solid #C7C7C7;
+    height: 2px;
+}
+
+.reg-tab {
+    position: absolute;
+    top: 25px;
+    right: 48px;
+    color: #C7C7C7;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-decoration: none;
+    /*cursor: pointer;*/
+}
+
+.body-entrance {
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.text-log-or-number {
+    margin: 0;
+    position: absolute;
+    top: 94px;
+    left: 25px;
+    text-align: left;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #949494;
+}
+
+.input-log-or-number {
+    margin: 0;
+    position: absolute;
+    top: 128px;
+    left: 25px;
+    width: 379px;
+    height: 43px;
+}
+
+.input-password {
+    margin: 0;
+    position: absolute;
+    top: 225px;
+    left: 25px;
+    width: 379px;
+    height: 43px;
+}
+
+.recover-password {
+    text-align: center;
+    color: #5970FF;
+    margin-bottom: 30px;
+}
+
+.text-password {
+    margin: 0;
+    position: absolute;
+    top: 191px;
+    left: 25px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #949494;
+
+}
+
+.div-button-entrance {
+    /*text-align: center;*/
+    margin-bottom: 15px;
+}
+
+.button-entrance {
+    position: absolute;
+    top: 298px;
+    left: 25px;
+    width: 379px;
+    height: 59px;
+    background: #5970FF;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: sans-serif;
+    border: none;
+    color: white;
+    text-align: center;
+    /*cursor: pointer;*/
+}
+
+.button-entrance:hover {
+    cursor: pointer;
+}
+
+.button-entrance:disabled {
+    cursor: not-allowed; /* Изменение курсора на "запрещающий" */
+    opacity: 50%
+}
+
+/*.div-recover-password {*/
+/*    position: absolute;*/
+/*    top: 372px;*/
+/*    left: 139px;*/
+/*    text-align: center;*/
+/*    color: #5970FF;*/
+/*    margin-bottom: 30px;*/
+/*}*/
+
+.text-recover-password {
+    position: absolute;
+    top: 372px;
+    left: 139px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #5970FF;
+    margin-bottom: 30px;
+
+}
+
+.log-in-using {
+    margin-bottom: 39px;
+}
+
+.text-log-in-using {
+    position: absolute;
+    bottom: 85px;
+    left: 25px;
+    color: #949494;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.site-button-google {
+    position: absolute;
+    bottom: 39px;
+    left: 25px;
+    cursor: pointer;
+}
+
+.site-button-facebook {
+    position: absolute;
+    bottom: 39px;
+    left: 131px;
+    cursor: pointer;
+}
+
+.site-button-yandex {
+    position: absolute;
+    bottom: 39px;
+    right: 96px;
+    cursor: pointer;
+}
+
