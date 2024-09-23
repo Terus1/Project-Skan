@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import './Main.css'
 
 
@@ -18,9 +18,43 @@ import greenCheckMark from '../../media/green_check_mark.svg'
 
 
 const Main = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Массив элементов карусели
+    const elements = [
+        <div className="carousel-item">
+            <img src={groupClock} alt="clock"/>
+        </div>,
+        <div className="carousel-item">
+            <img src={groupLoupe} alt="loupe"/>
+        </div>,
+        <div className="carousel-item">
+            <img src={groupShield} alt="shield-icon"/>
+        </div>,
+    ];
 
-        return (
+    // Функция для обработки клика вправо
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % elements.length);
+    };
+
+    // Функция для обработки клика влево
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) =>
+            (prevIndex - 1 + elements.length) % elements.length
+        );
+    };
+
+    // Получение 3 элементов для отображения, в цикле
+    const getVisibleElements = () => {
+        return [
+            elements[currentIndex],
+            elements[(currentIndex + 1) % elements.length],
+            elements[(currentIndex + 2) % elements.length],
+        ];
+    };
+
+    return (
             <>
                 <main className="main">
                     <div className="upper-part-site">
@@ -45,50 +79,23 @@ const Main = () => {
 
                     <div className="why-are-we">
                         <p className="p-why-are-we">почему именно мы</p>
-                        <div className="carousel">
-                            <div className="carousel-track">
-                                <div className="carousel-item">1</div>
-                                <div className="carousel-item">2</div>
-                                <div className="carousel-item">3</div>
-                                <div className="carousel-item">4</div>
+
+                        <div className="carousel-position">
+                            <img className="arrow-nav-left" src={arrowIcon} alt="arrow-left-icon" onClick={handlePrev}/>
+
+                            <div className="carousel-container">
+                                <div className="carousel-track">
+                                    {getVisibleElements().map((element, index) => (
+                                        <div className="carousel-slide" key={index}>
+                                            {element}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
+
+                            <img className="arrow-nav-right" src={arrowIcon} alt="arrow-right-icon"
+                                 onClick={handleNext}/>
                         </div>
-
-                        <button className="prev">Назад</button>
-                        <button className="next">Вперед</button>
-                        {/*                        <div className="carousel-position">*/}
-
-                        {/*                            <img className="arrow-nav-left next" src={arrowIcon} alt="arrow-left-icon"/>*/}
-
-
-                        {/*                            <div className="container">*/}
-
-                        {/*                                <div className="window">*/}
-                        {/*                                    <div id="carousel">*/}
-                        {/*/!*<img class="slide" id="s1" src="https://w-dog.ru/wallpapers/5/16/293857227813431/britanskaya-korotkoshrstnaya-britanec-kot-koshka-morda.jpg" alt="">*!/*/}
-                        {/*/!*<img class="slide" id="s2" src="https://polinka.top/uploads/posts/2023-05/1685047513_polinka-top-p-kartinki-shotlandskikh-koshek-krasivo-37.jpg" alt="">*!/*/}
-                        {/*/!*<img class="slide" id="s3" src="https://img.goodfon.ru/original/5000x3330/0/68/koshka-kot-polosatyy-glaza.jpg" alt="">*!/*/}
-
-                        {/*                                        <div className="first-reason slide" id="s1">*/}
-                        {/*                                            <img src={groupClock} alt="clock"/>*/}
-                        {/*                                        </div>*/}
-
-                        {/*                                        <div className="second-reason slide" id="s2">*/}
-                        {/*                                            <img src={groupLoupe} alt="loupe"/>*/}
-                        {/*                                        </div>*/}
-
-                        {/*                                        <div className="third-reason slide" id="s3">*/}
-                        {/*                                            <img src={groupShield} alt="shield-icon"/>*/}
-                        {/*                                        </div>*/}
-                        {/*                                    </div>*/}
-                        {/*                                </div>*/}
-                        {/*/!*<span id="prev">PREV</span>*!/*/}
-                        {/*/!*<span id="next">NEXT</span>*!/*/}
-                        {/*                            </div>*/}
-
-                        {/*                            <img className="arrow-nav-right prev" src={arrowIcon} alt="arrow-right-icon"/>*/}
-
-                        {/*                        </div>*/}
                     </div>
 
                     <div className="man-sitting">
@@ -103,7 +110,7 @@ const Main = () => {
 
                             <div className="beginner grid-item">
                                 <div className="tariff-header-beginner">
-                                    <div className="head-tariff-beginner">
+                                <div className="head-tariff-beginner">
                                         <p className="name-of-tariff">Beginner</p>
                                         <p className="shortly">Для небольшого исследования</p>
                                     </div>
@@ -126,7 +133,7 @@ const Main = () => {
 
 
                                     <div className="current-tariff">
-                                    <p className="text-current-tariff">Текущий тариф</p>
+                                        <p className="text-current-tariff">Текущий тариф</p>
                                     </div>
 
                                     <p className="monthly">или 150 ₽/мес. при рассрочке на 24 мес.</p>
@@ -152,7 +159,7 @@ const Main = () => {
                                     </div>
 
                                     <div className="beginner-button">
-                                    <button className="to-personal-acc">Перейти в личный кабинет</button>
+                                        <button className="to-personal-acc">Перейти в личный кабинет</button>
                                     </div>
                                 </div>
 
@@ -188,7 +195,8 @@ const Main = () => {
                                         <div className="body-tariff-includes">
                                             <img src={greenCheckMark} alt="green-check-mark"
                                                  className={'green-check-mark-1'}/>
-                                            <p className={'text-in-body-tariff-includes-1'}>Все пункты тарифа Beginner</p>
+                                            <p className={'text-in-body-tariff-includes-1'}>Все пункты тарифа
+                                                Beginner</p>
 
                                             <img src={greenCheckMark} alt="green-check-mark"
                                                  className={'green-check-mark-2'}/>
@@ -196,7 +204,8 @@ const Main = () => {
 
                                             <img src={greenCheckMark} alt="green-check-mark"
                                                  className={'green-check-mark-3'}/>
-                                            <p className={'text-in-body-tariff-includes-3'}>Рекомендации по приоритетам</p>
+                                            <p className={'text-in-body-tariff-includes-3'}>Рекомендации по
+                                                приоритетам</p>
 
                                         </div>
                                     </div>
@@ -222,7 +231,7 @@ const Main = () => {
 
                                 <div className="tariff-body-beginner">
                                     <div className="div-new-price">
-                                    <p className="new-price">2379 ₽</p>
+                                        <p className="new-price">2379 ₽</p>
 
                                     </div>
                                     <div className="div-old-price">
@@ -240,7 +249,8 @@ const Main = () => {
 
                                             <img src={greenCheckMark} alt="green-check-mark"
                                                  className={'green-check-mark-2'}/>
-                                            <p className={'text-in-body-tariff-includes-2'}>Безлимитное количество запросов</p>
+                                            <p className={'text-in-body-tariff-includes-2'}>Безлимитное количество
+                                                запросов</p>
 
                                             <img src={greenCheckMark} alt="green-check-mark"
                                                  className={'green-check-mark-3'}/>
@@ -251,7 +261,7 @@ const Main = () => {
 
 
                                     <div className="button-business">
-                                    <button className="more-white ">Подробнее</button>
+                                        <button className="more-white ">Подробнее</button>
                                     </div>
                                 </div>
 
@@ -263,7 +273,6 @@ const Main = () => {
                 </main>
             </>
         )
-
 }
 
 

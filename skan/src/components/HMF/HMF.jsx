@@ -6,8 +6,6 @@ import Footer from "../Footer/Footer";
 
 
 const HMF = ({isLoggedIn, setIsLoggedIn}) =>  {
-    console.log('HMF: ' + isLoggedIn)
-
     const handleLogout = () => {
         localStorage.removeItem('isLoggedIn'); // Удаляем запись из localStorage
         setIsLoggedIn(false); // Обновляем состояние в React

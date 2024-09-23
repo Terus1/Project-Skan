@@ -1,3 +1,4 @@
+
 body {
     /*margin: 0;*/
     /*padding: 0;*/
@@ -422,47 +423,99 @@ body {
 }
 
 /*- -           -   -   -   -       -   -   -   -   -   -   -   SLIDER------------------------------*/
-.carousel {
-    width: 300px;
-    overflow: hidden;
+/*.carousel {*/
+/*    width: 300px;*/
+/*    overflow: hidden;*/
+/*    position: relative;*/
+/*    margin: 20px auto;*/
+/*}*/
+
+/*.carousel-track {*/
+/*    display: flex;*/
+/*    transition: transform 0.5s ease-in-out;*/
+/*}*/
+
+/*.carousel-item {*/
+/*    min-width: 300px;*/
+/*    height: 200px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background-color: #f8b400;*/
+/*    font-size: 24px;*/
+/*    color: white;*/
+/*}*/
+
+/*button {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%);*/
+/*    background-color: #333;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 10px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.prev {*/
+/*    left: 10px;*/
+/*}*/
+
+/*.next {*/
+/*    right: 10px;*/
+/*}*/
+
+
+
+.carousel-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    margin: 20px auto;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden; /* Скрыть элементы за границей */
+    width: 100%; /* Ширина для трёх видимых элементов */
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; /* Плавная анимация */
+    width: 100%;
 }
 
-.carousel-item {
-    min-width: 300px;
-    height: 200px;
+.carousel-slide {
+    flex: 0 0 33.33%; /* Каждый элемент занимает треть ширины */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8b400;
-    font-size: 24px;
-    color: white;
 }
 
-button {
+.carousel-item {
+    width: 100%;
+    text-align: center;
+}
+
+.arrow-nav-left, .arrow-nav-right {
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+}
+
+.arrow-nav-left {
     position: absolute;
+    left: -50px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
 }
 
-.prev {
-    left: 10px;
+.arrow-nav-right {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
 }
-
-.next {
-    right: 10px;
-}
-
-
-
