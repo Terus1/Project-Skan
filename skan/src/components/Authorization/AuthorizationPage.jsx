@@ -11,13 +11,13 @@ import Footer from "../Footer/Footer";
 
 
 
-const AuthorizationPage = ({setIsLoggedIn}) => {
+const AuthorizationPage = ({setIsLoggedIn, setAccountInfo}) => {
 
 
         return (
             <>
-                <Header />   {/* Передаем состояние в Header */}
-                <Authorization setIsLoggedIn={setIsLoggedIn}/> {/* Передаем функцию изменения состояния в Authorization */}
+                <Header />
+                <Authorization setIsLoggedIn={setIsLoggedIn} setAccountInfo={setAccountInfo}/> {/* Передаем функцию изменения состояния в Authorization */}
                 <Footer/>
             </>
         )

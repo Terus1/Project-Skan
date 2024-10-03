@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 
 
 
-const HMF = ({isLoggedIn, setIsLoggedIn}) =>  {
+const HMF = ({isLoggedIn, setIsLoggedIn, accountInfo, setAccountInfo}) =>  {
     const handleLogout = () => {
         localStorage.removeItem('isLoggedIn'); // Удаляем запись из localStorage
         setIsLoggedIn(false); // Обновляем состояние в React
@@ -13,8 +13,8 @@ const HMF = ({isLoggedIn, setIsLoggedIn}) =>  {
 
         return(
             <>
-                <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
-                <Main />
+                <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} accountInfo={accountInfo}/>
+                <Main isLoggedIn={isLoggedIn} />
                 <Footer />
             </>
         )

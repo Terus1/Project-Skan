@@ -519,3 +519,16 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+
+
+
+.request-data {
+    width: 335px;
+    height: 59px;
+    background: #5970FF;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+}

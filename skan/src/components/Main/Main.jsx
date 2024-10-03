@@ -17,7 +17,7 @@ import tariffIncludesBusiness from "../../media/tariff-includes-business.svg"
 import greenCheckMark from '../../media/green_check_mark.svg'
 
 
-const Main = () => {
+const Main = ({isLoggedIn}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     // Массив элементов карусели
@@ -70,6 +70,15 @@ const Main = () => {
                                 Комплексный анализ публикаций, получение данных <br/> в формате PDF на электронную
                                 почту.
                             </p>
+
+                            {isLoggedIn ? (
+                                <button className={'request-data'}>Запросить данные</button>
+                            )
+                            :(
+                                <></>
+                                )
+                            }
+
                         </div>
 
                         <div className="div-big-icon-switch-man">

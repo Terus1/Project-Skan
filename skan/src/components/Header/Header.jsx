@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import cat from '../../media/cat.jpg'
 
 
-const Header = ({ isLoggedIn, handleLogout}) => {
+const Header = ({ isLoggedIn, handleLogout, accountInfo}) => {
 
         return(
             <>
@@ -27,10 +27,20 @@ const Header = ({ isLoggedIn, handleLogout}) => {
 
                     {isLoggedIn ? (
                             <div className="authorized">
-                                <div className="info-about-companies">
-                                    <p className={'used-companies'}>Использовано компаний</p>
-                                    <p className={'limit-companies'}>Лимит по компаниям</p>
-                                </div>
+
+                                    {accountInfo ? (
+                                        <div className="info-about-companies">
+                                            <p className={'used-companies'}>Использовано компаний {accountInfo.eventFiltersInfo.companyLimit}</p>
+                                            <p className={'limit-companies'}>Лимит по компаниям {accountInfo.eventFiltersInfo.usedCompanyCount}</p>
+                                        </div>)
+
+                                : (
+                                    <div className="info-about-companies">
+                                        <p className="used-companies">Загрузка информации...</p>
+                                    </div>)
+                                    }
+
+
                                 <p className={'user-name'}>Вася П.</p>
                                 <img src={cat} alt="cat" className={'photo-profile'}/>
 

@@ -9,7 +9,7 @@ import yandexButton from '../../media/yandex-button.svg'
 import facebookButton from '../../media/facebook-button.svg'
 
 
-const Authorization = ({setIsLoggedIn}) => {
+const Authorization = ({setIsLoggedIn, setAccountInfo}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate(); // Хук для навигации
@@ -55,13 +55,28 @@ const Authorization = ({setIsLoggedIn}) => {
             // После успешной авторизации изменить состояние на авторизованное
             setIsLoggedIn(true);
 
+
+
             // Перенаправление на главную страницу
             navigate('/');
+
+            // Выполняем защищённый запрос и получаем accountInfo
+            const accountInfo = await fetchWithToken('https://gateway.scan-interfax.ru/api/v1/account/info', accessToken);
+
+            // Сохраняем информацию о аккаунте в состоянии
+            setAccountInfo(accountInfo);
+            console.log(accountInfo);
+
+            // Выводим только usedCompanyCount
+            console.log('Used Company Count:', accountInfo.eventFiltersInfo.usedCompanyCount);
+
+            // Выводим только companyLimit
+            console.log('CompanyLimit:', accountInfo.eventFiltersInfo.companyLimit);
 
             // 2. После успешной авторизации, выполнить защищённый запрос
             await fetchWithToken('https://gateway.scan-interfax.ru/api/v1/account/info', accessToken);
             await fetchWithToken('https://gateway.scan-interfax.ru/api/v1/account/balance', accessToken);
-            await fetchWithToken('https://gateway.scan-interfax.ru/api/v1/account/purchaseHistory', accessToken);
+            // await fetchWithToken('https://gateway.scan-interfax.ru/api/v1/account/purchaseHistory', accessToken);
 
         } catch (error) {
             console.error('Ошибка:', error);
@@ -84,8 +99,9 @@ const Authorization = ({setIsLoggedIn}) => {
             }
 
             const data = await response.json();
-            console.log('Ответ с авторизацией:', data);
+            console.log('Ответ с авторизацией:', data); // Отладочная информация
 
+            return data; // Вернуть данные для использования
         } catch (error) {
             console.error('Ошибка запроса:', error);
         }

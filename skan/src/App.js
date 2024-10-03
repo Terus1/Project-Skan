@@ -7,7 +7,7 @@ import AuthorizationPage from "./components/Authorization/AuthorizationPage";
 
 
 const App = () => {
-  
+  const [accountInfo, setAccountInfo] = useState(null); // Состояние для хранения данных аккаунта
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Проверка состояния авторизации при загрузке приложения
@@ -21,10 +21,15 @@ const App = () => {
         <Routes>
 
           {/* Главная страница */}
-          <Route path="/" element={<HMF isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
+          <Route path="/" element={<HMF isLoggedIn={isLoggedIn}
+                                        setIsLoggedIn={setIsLoggedIn}
+                                        accountInfo={accountInfo}
+                                        setAccountInfo={setAccountInfo}/>} />
 
           {/* Страница авторизации */}
-          <Route path="/authorization" element={<AuthorizationPage setIsLoggedIn={setIsLoggedIn}/>} />
+          <Route path="/authorization" element={<AuthorizationPage setIsLoggedIn={setIsLoggedIn}
+                                                                   accountInfo={accountInfo}
+                                                                   setAccountInfo={setAccountInfo}/>} />
 
         </Routes>
     </>
