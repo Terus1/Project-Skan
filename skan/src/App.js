@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import {Route, Router, Routes} from "react-router-dom";
 import HMF from "./components/HMF/HMF";
 import AuthorizationPage from "./components/Authorization/AuthorizationPage";
-
-
+import SearchPage from "./components/SearchPage/SearchPage";
+import ResultPage from "./components/ResultPage/ResultPage";
 
 
 const App = () => {
@@ -30,7 +30,16 @@ const App = () => {
           <Route path="/authorization" element={<AuthorizationPage setIsLoggedIn={setIsLoggedIn}
                                                                    accountInfo={accountInfo}
                                                                    setAccountInfo={setAccountInfo}/>} />
+          {/* Страница поиска */}
+          <Route path="/search" element={<SearchPage isLoggedIn={isLoggedIn}
+                                                     setIsLoggedIn={setIsLoggedIn}
+                                                     accountInfo={accountInfo}
+                                                     setAccountInfo={setAccountInfo}/>}/>
 
+          <Route path="/result" element={<ResultPage isLoggedIn={isLoggedIn}
+                                                     setIsLoggedIn={setIsLoggedIn}
+                                                     accountInfo={accountInfo}
+                                                     setAccountInfo={setAccountInfo}/>}/>
         </Routes>
     </>
   )

@@ -15,6 +15,7 @@ import tariffIncludesPro from "../../media/tariff-includes-pro.svg"
 import businessIcon from "../../media/business-icon.svg"
 import tariffIncludesBusiness from "../../media/tariff-includes-business.svg"
 import greenCheckMark from '../../media/green_check_mark.svg'
+import {Link} from "react-router-dom";
 
 
 const Main = ({isLoggedIn}) => {
@@ -72,10 +73,12 @@ const Main = ({isLoggedIn}) => {
                             </p>
 
                             {isLoggedIn ? (
-                                <button className={'request-data'}>Запросить данные</button>
-                            )
-                            :(
-                                <></>
+                                    <Link to={"/search"}>
+                                        <button className={'request-data'}>Запросить данные</button>
+                                    </Link>
+                                )
+                                : (
+                                    <></>
                                 )
                             }
 

@@ -154,7 +154,27 @@
     color: #949494;
 }
 
+.input-error {
+    border: 2px solid red; /* Красная граница */
+    outline: none; /* Убираем стандартный outline */
 
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Стили для звездочки */
+.required-asterisk {
+    color: black; /* Обычный цвет */
+}
+
+/* Звездочка красного цвета при ошибке */
+.error-asterisk {
+    color: red; /* Красная звездочка при ошибке */
+}
 /*===================================================RIGHT-PART=======================================================*/
 
 .right-part {
